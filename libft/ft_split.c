@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_split.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 09:03:30 by elenpere          #+#    #+#             */
-/*   Updated: 2025/07/22 16:45:29 by elenpere         ###   ########.fr       */
+/*   Created: 2025-02-18 09:03:30 by elenpere          #+#    #+#             */
+/*   Updated: 2025-02-18 09:03:30 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 static size_t	ft_count_words(char const *s, char c)
 {
@@ -103,3 +103,28 @@ char	**ft_split(char const *s, char c)
 	words_dst[j] = NULL;
 	return (words_dst);
 }
+
+/* #include <stdio.h>
+#include <stdlib.h>
+
+int	main(void)
+{
+	char *str = "hello word this is C language";
+	char limit = ' ';
+	char **result = ft_split(str, limit);
+
+	if (!result)
+	{
+		printf("error, no mem reserved\n");
+		return (1);
+	}
+	int i = 0;
+	while (result[i])
+	{
+		printf("word %d: %s\n", i, result[i]);
+		free(result[i]);
+		i++;
+	}
+	free(result);
+	return (0);
+} */

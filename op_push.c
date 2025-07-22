@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-07-18 09:50:04 by elenpere          #+#    #+#             */
-/*   Updated: 2025-07-18 09:50:04 by elenpere         ###   ########.fr       */
+/*   Created: 2025/07/18 09:50:04 by elenpere          #+#    #+#             */
+/*   Updated: 2025/07/22 16:34:22 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 /// @param origin * to origin stack
 void	ft_push(t_listps **dest, t_listps **origin)
 {
-	t_listps	*tmp; //aux node
+	t_listps	*tmp;
 
-	if (!origin || !*origin) //nothing to do if empty origin
+	if (!origin || !*origin)
 		return ;
-	tmp = *origin; //save origin top value in temp
-	*origin = (*origin)->next; //origin top is now second node
-	tmp->next = NULL; //disconnect tmp from origin
-	ft_lstadd_front (dest, tmp); //add tmp to dest top
+	tmp = *origin;
+	*origin = (*origin)->next;
+	tmp->next = NULL;
+	ft_lstadd_front_ps (dest, tmp);
 }
 
 /// @brief push top element from stack_b to stack_a
@@ -32,8 +32,8 @@ void	ft_push(t_listps **dest, t_listps **origin)
 /// @param stack_b * to stack_b
 void	ft_pa(t_listps **stack_a, t_listps **stack_b)
 {
-	ft_push (stack_a, stack_b); //push
-	ft_printf ("pa\n"); //newline
+	ft_push (stack_a, stack_b);
+	ft_printf ("pa\n");
 }
 
 /// @brief push top element from stack_a to stack_b
@@ -41,6 +41,6 @@ void	ft_pa(t_listps **stack_a, t_listps **stack_b)
 /// @param stack_b * to stack_b
 void	ft_pb(t_listps **stack_a, t_listps **stack_b)
 {
-	ft_push (stack_b, stack_a); //push
-	ft_printf ("pb\n"); //newline
+	ft_push (stack_b, stack_a);
+	ft_printf ("pb\n");
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_stacks.c                                        :+:      :+:    :+:   */
+/*   op_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-07-18 09:50:15 by elenpere          #+#    #+#             */
-/*   Updated: 2025-07-18 09:50:15 by elenpere         ###   ########.fr       */
+/*   Created: 2025/07/18 09:50:15 by elenpere          #+#    #+#             */
+/*   Updated: 2025/07/22 16:36:33 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 
 /// @brief creates linked list (stack) from int array
 /// @param nums * array to be added to list
@@ -18,24 +18,24 @@
 /// @return * to head of list / NULL if mem allocation fails
 t_listps	*ft_create_lists(int *nums, int total_nums)
 {
-	t_listps	*stack; //* to head of list
-	t_listps	*node; //* to node being created
-	int			i; //loop for array
+	t_listps	*stack;
+	t_listps	*node;
+	int			i;
 
 	i = 0;
-	stack = NULL; //initiate list
-	while (i < total_nums) //loop until last int is reached
+	stack = NULL;
+	while (i < total_nums)
 	{
-		node = malloc(sizeof(t_listps)); //mem allocation for new node
-		if (!node) //allocation check
+		node = malloc(sizeof(t_listps));
+		if (!node)
 		{
-			free_list(stack); //free list
-			return (NULL); //failure
+			ft_free_list(stack);
+			return (NULL);
 		}
-		node->content = nums[i]; //assign node vale num[i] from int array
-		node->next = NULL; //assign NULL as next node's value
-		ft_lstadd_back(&stack, node); //add to node to end
-		i++; //next num
+		node->content = nums[i];
+		node->next = NULL;
+		ft_lstadd_back_ps(&stack, node);
+		i++;
 	}
-	return (stack); //return * pointing to final stack array's first node
+	return (stack);
 }

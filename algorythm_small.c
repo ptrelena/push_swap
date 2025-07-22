@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorythm_small.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-07-18 09:50:00 by elenpere          #+#    #+#             */
-/*   Updated: 2025-07-18 09:50:00 by elenpere         ###   ########.fr       */
+/*   Created: 2025/07/18 09:50:00 by elenpere          #+#    #+#             */
+/*   Updated: 2025/07/22 16:33:26 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,49 +18,49 @@
 /// @param total_nums total nums in stack_a
 void	ft_sort_small(t_listps **stack_a, t_listps **stack_b, int total_nums)
 {
-	int	first; //first element in stack_a
-	int	second; //second element in stack_a
+	int	first;
+	int	second;
 
-	first = (*stack_a)->content; //assign first's content
-	second = (*stack_a)->next->content; //assign second's content
-	if (total_nums == 2 && (first > second)) //2 num & first largest
-		ft_sa(stack_a); //swap one another
-	if (total_nums == 3) //3 num
-		ft_sort_small_3 (stack_a, stack_b);
-	if (total_nums == 4) //4 num
+	first = (*stack_a)->content;
+	second = (*stack_a)->next->content;
+	if (total_nums == 2 && (first > second))
+		ft_sa(stack_a);
+	if (total_nums == 3)
+		ft_sort_small_3 (stack_a);
+	if (total_nums == 4)
 		ft_sort_small_4 (stack_a, stack_b);
-	if (total_nums == 5) //5 mum
+	if (total_nums == 5)
 		ft_sort_small_5 (stack_a, stack_b);
 }
 
 /// @brief sort 3 element stack
 /// @param stack_a * stack_a
 /// @param stack_b * stack_b
-void	ft_sort_small_3(t_listps **stack_a, t_listps **stack_b)
+void	ft_sort_small_3(t_listps **stack_a)
 {
-	int	first; //first element in stack_a
-	int	second; //second element in stack_a
-	int	third; //third element in stack_a
+	int	first;
+	int	second;
+	int	third;
 
-	first = (*stack_a)->content; //assign first's content
-	second = (*stack_a)->next->content; //assign second's content
-	third = (*stack_a)->next->next->content; //assign third's content
-	if ((first > second) && (second > third)) //[4, 3, 2]
+	first = (*stack_a)->content;
+	second = (*stack_a)->next->content;
+	third = (*stack_a)->next->next->content;
+	if ((first > second) && (second > third))
 	{
-		ft_sa (stack_a); //swap two first elements [3, 4, 2]
-		ft_rra (stack_a); //move last to top [2, 3, 4]
+		ft_sa (stack_a);
+		ft_rra (stack_a);
 	}
-	if ((first > third) && (third > second)) //[4, 2, 3]
-		ft_ra (stack_a); //move first to bottom [2, 3, 4]
-	if ((second > first) && (first > third)) //[3, 4, 2]
-		ft_rra (stack_a); //move last to top [2, 3, 4]
-	if ((second > third) && (third > first)) //[2, 4, 3]
+	if ((first > third) && (third > second))
+		ft_ra (stack_a);
+	if ((second > first) && (first > third))
+		ft_rra (stack_a);
+	if ((second > third) && (third > first))
 	{
-		ft_sa (stack_a); //swap two first elements [4, 2, 3]
-		ft_ra (stack_a); //move first to bottom [2, 3, 4]
+		ft_sa (stack_a);
+		ft_ra (stack_a);
 	}
-	if ((third > first) && (first > second)) //[3, 2, 4]
-		ft_sa(stack_a); //swap two first elements [2, 3, 4]
+	if ((third > first) && (first > second))
+		ft_sa(stack_a);
 }
 
 /// @brief sort 4 element stack
@@ -68,11 +68,11 @@ void	ft_sort_small_3(t_listps **stack_a, t_listps **stack_b)
 /// @param stack_b * stack_b
 void	ft_sort_small_4(t_listps **stack_a, t_listps **stack_b)
 {
-	while ((*stack_a)->key != 0) //loop until key == 0
-		ft_ra(stack_a); //rotate to get smallest element on top
-	ft_pb(stack_a, stack_b); //push stacks_a's smallest element to stack_b
-	ft_sort_small_3(stack_a, stack_b); //sort remaining 3 in stack_a
-	ft_pa(stack_a, stack_b); //push smallest element back to stack_a
+	while ((*stack_a)->key != 0)
+		ft_ra(stack_a);
+	ft_pb(stack_a, stack_b);
+	ft_sort_small_3(stack_a);
+	ft_pa(stack_a, stack_b);
 }
 
 /// @brief sort 5 element stack
@@ -80,22 +80,22 @@ void	ft_sort_small_4(t_listps **stack_a, t_listps **stack_b)
 /// @param stack_b * stack_b
 void	ft_sort_small_5(t_listps **stack_a, t_listps **stack_b)
 {
-	int	i; //counter for elements pushed to stack_b
+	int	i;
 
 	i = 0;
-	while (i < 2) //loop until 3 elements only on stack_a
+	while (i < 2)
 	{
-		if ((*stack_a)->key == 0 || (*stack_a)->key == 1) //find two smallest num
+		if ((*stack_a)->key == 0 || (*stack_a)->key == 1)
 		{
-			ft_pb (stack_a, stack_b); //push both nums to stack_b
+			ft_pb (stack_a, stack_b);
 			i++;
 		}
 		else
-			ft_ra (stack_a); //rotate to get to smallest nums on top
+			ft_ra (stack_a);
 	}
-	if ((*stack_b)->key < (*stack_b)->next->key) //sort nums in stack_b
-		ft_sb (stack_a); //swap if first is smaller than second
-	ft_sort_small_3(stack_a, stack_b); //sort remaning 3 in stack_a
-	ft_pa (stack_a, stack_b); //push second smallest from stack_b to stack_a
-	ft_pa (stack_a, stack_b); //push smallest from stack_b to stack_a
+	if ((*stack_b)->key < (*stack_b)->next->key)
+		ft_sb (stack_a);
+	ft_sort_small_3(stack_a);
+	ft_pa (stack_a, stack_b);
+	ft_pa (stack_a, stack_b);
 }

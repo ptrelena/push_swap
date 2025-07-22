@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_general.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-07-18 09:50:28 by elenpere          #+#    #+#             */
-/*   Updated: 2025-07-18 09:50:28 by elenpere         ###   ########.fr       */
+/*   Created: 2025/07/18 09:50:28 by elenpere          #+#    #+#             */
+/*   Updated: 2025/07/22 17:07:43 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 /// @param stack * head of list
 void	ft_free_list(t_listps *stack)
 {
-	t_listps	*tmp; //temp pointer
+	t_listps	*tmp;
 
-	while (stack) //loop until end of list
+	while (stack)
 	{
-		tmp = stack; //save current node
-		stack = stack->next; //move to next node
-		free(tmp); //free current node
+		tmp = stack;
+		stack = stack->next;
+		free(tmp);
 	}
 }
 
@@ -31,26 +31,25 @@ void	ft_free_list(t_listps *stack)
 /// @param n_arrays num of subarrays in array
 void	ft_free_array(char ***array, int n_arrays)
 {
-	int	i; //subarrays loop
-	int	j; //subarrays' str loop
+	int	i;
+	int	j;
 
 	i = 0;
-	while (i < n_arrays) //loop until final subarray
+	while (i < n_arrays)
 	{
 		j = 0;
-		while (array[i][j]) //loop until final str end
-			ft_free(array[i][j++]); //free str
-		ft_free(array[i]); //free subarray
-		i++; //keep looping
+		while (array[i][j])
+			free(array[i][j++]);
+		free(array[i]);
+		i++;
 	}
-	ft_free(array); //free triple array
+	free(array);
 }
 
 /// @brief exit program
 /// @param void
 void	ft_out(void)
 {
-	ft_printf("Error\n"); //print error message
-	exit(1); //exit through error stdout
+	ft_printf("Error\n");
+	exit(1);
 }
-

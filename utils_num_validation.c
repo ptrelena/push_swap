@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_num_validation.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elenpere <elenpere@student.42.fr>          #+#  +:+       +#+        */
+/*   By: elenpere <elenpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-07-18 09:50:38 by elenpere          #+#    #+#             */
-/*   Updated: 2025-07-18 09:50:38 by elenpere         ###   ########.fr       */
+/*   Created: 2025/07/18 09:50:38 by elenpere          #+#    #+#             */
+/*   Updated: 2025/07/22 17:08:16 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,25 @@
 /// @return valid returns 1, exits calling ft_out otherwise
 int	ft_val_let(char *str)
 {
-	int	i; //counter to loop str
+	int	i;
 
 	i = 0;
-	while (str[i]) //while str exists
+	while (str[i])
 	{
-		//str differetn from digit, space or sign
 		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == 32 || str[i] == 9
 				|| str[i] == '-' || str[i] == '+'))
-			ft_out(); //exit
-		//str equal to sign but not followed by a num
+			ft_out();
 		if ((str[i] == '-' || str[i] == '+') && !(str[i + 1] >= '0'
 				&& str[i + 1] <= '9'))
-			ft_out(); //exit
-		//str is a num but not followed by digit, space or sign
+			ft_out();
 		if ((str[i] >= '0' && str[i] <= '9')
 			&& !((str[i + 1] >= '0' && str[i + 1] <= '9')
 				|| str[i + 1] == 32
 				|| str[i + 1] == 9 || str[i + 1] == '\0'))
-			ft_out(); //exit
-		i++; //loop to following char
+			ft_out();
+		i++;
 	}
-	return (1); //return 1 if str is valid
+	return (1);
 }
 
 /// @brief checks for duplicate nums in array
@@ -47,22 +44,22 @@ int	ft_val_let(char *str)
 /// @return 1 if unique values, 0 if duplicate
 int	ft_val_num(int *nums, int size)
 {
-	int	i; //counter 1
-	int	a; //counter 2
+	int	i;
+	int	a;
 
-	i = 0; //initiate 0 for first num
-	while (i < size) //loop until i reached aray size
+	i = 0;
+	while (i < size)
 	{
-		a = 0; //always restarted to analyze all 'a' to new 'i'
-		while (a < i) //loop until a reaches i
+		a = 0;
+		while (a < i)
 		{
-			if (nums[a] == nums[i]) //end program if equal
+			if (nums[a] == nums[i])
 				return (0);
 			a++;
 		}
 		i++;
 	}
-	return (1); //return 1 if no equal num found
+	return (1);
 }
 
 /// @brief checks if nun if within INT_MIN & INT_MAX
@@ -70,12 +67,12 @@ int	ft_val_num(int *nums, int size)
 /// @return 1 if valid, exits program otherwise
 int	ft_limit(long num)
 {
-	long	temp; //aux variable
+	long	temp;
 
-	temp = num; //equals aux to original variable
-	if (temp < INT_MIN || temp > INT_MAX) //num not within INT_MIN & INT_MAX
-		ft_out(); //exit ft
-	return (1); //returns 1 if num within INT_MIN & INT_MAX
+	temp = num;
+	if (temp < INT_MIN || temp > INT_MAX)
+		ft_out();
+	return (1);
 }
 
 /// @brief converts str to long
@@ -83,28 +80,28 @@ int	ft_limit(long num)
 /// @return converted str if ft_limt validation ok
 int	ft_atol(const char *str)
 {
-	long	num; //store final num
-	int		i; //counter loop for str
-	int		sign; //long sign
+	long	num;
+	int		i;
+	int		sign;
 
 	sign = 1;
 	num = 0;
 	i = 0;
-	while ((str[i] > 8 && str[i] < 14) || str[i] == ' ') //no spaces
+	while ((str[i] > 8 && str[i] < 14) || str[i] == ' ')
 		i++;
-	if (str[i] == '+' || str [i] == '-') //define sign
+	if (str[i] == '+' || str [i] == '-')
 	{
 		if (str[i] == '-')
 			sign = -1;
 		i++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0') //digits
+	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
 	{
-		num = 10 * num + (str[i] - '0'); //convert char digit to int digit
+		num = 10 * num + (str[i] - '0');
 		i++;
 	}
-	ft_limit (sign * num); //check if num is within INT_MIN & INT_MAX
-	return (sign * num); //return converted num
+	ft_limit (sign * num);
+	return (sign * num);
 }
 
 /// @brief converts ***char array to int array w validation
@@ -114,27 +111,26 @@ int	ft_atol(const char *str)
 /// @return *int array w all values converted
 int	*ft_convert_to_int_array(char ***array, int n_array, int total_nums)
 {
-	int	*nums; //final *int array
-	int	i; //index to loop parsing array[a]
-	int	j; //index to loop parsing array[a][j]
-	int	a; //index to fill nums[a]
+	int	*nums;
+	int	i;
+	int	j;
+	int	a;
 
 	i = 0;
 	a = 0;
-	nums = malloc(sizeof(int) * total_nums); //allocate mem for *int array
-	if (!nums) //allocation check
+	nums = malloc(sizeof(int) * total_nums);
+	if (!nums)
 		return (NULL);
-	while (i < n_array) //loop until i reached last number in array
+	while (i < n_array)
 	{
-		j = 0; //always initialized as loops from n_array start
-		while (array[i] && array[i][j]) //while both exist
+		j = 0;
+		while (array[i] && array[i][j])
 		{
-			nums[a] = ft_atol(array[i][j]); //fill nums[a] w array[i][j] int value
-			//array[i][j] is a *char that points to total num passed to atol
+			nums[a] = ft_atol(array[i][j]);
 			a++;
 			j++;
 		}
 		i++;
 	}
-	return (nums); //return array w all values converted
+	return (nums);
 }
