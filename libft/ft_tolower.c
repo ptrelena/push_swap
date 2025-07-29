@@ -33,4 +33,3 @@ int	main(void)
 	printf ("%c", ft_tolower(a));
 	printf ("%c", ft_tolower(b));
 	return (0);
-}*/

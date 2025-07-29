@@ -22,7 +22,7 @@ void	ft_push(t_listps **dest, t_listps **origin)
 	if (!origin || !*origin)
 		return ;
 	tmp = *origin;
-	*origin = (*origin)->next;
+	*origin = (*origin)->next; //origin top is now second node
 	tmp->next = NULL;
 	ft_lstadd_front_ps (dest, tmp);
 }

@@ -30,10 +30,11 @@ void	ft_rotate(t_listps **stack)
 	t_listps	*final;
 	t_listps	*first;
 
+
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
 	first = *stack;
-	*stack = first->next;
+	*stack = first->next; //second becomes first
 	first->next = NULL;
 	final = ft_lstlast_ps (*stack);
 	final->next = first;

@@ -17,7 +17,7 @@
 /// @param c
 /// @param n
 /// @return *str
-void	*ft_memset(void *str, int c, size_t n) // ft prototype
+void	*ft_memset(void *str, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*ptr;
@@ -36,11 +36,10 @@ void	*ft_memset(void *str, int c, size_t n) // ft prototype
 
 /* int	main(void)
 {
-	unsigned char	a [] = "Elena"; //pointer variable
-	int	b = 'a'; //modification int
-	size_t	c = 3; //number of times to modify int 'b'
+	unsigned char	a [] = "Elena";
+	int	b = 'a';
+	size_t	c = 3;
 
-	printf("%s\n", a); //a before memset
-	ft_memset(a, b, c); //call ft
-	printf("%s\n", a); //a after memset
-} */
+	printf("%s\n", a);
+	ft_memset(a, b, c);
+	printf("%s\n", a);

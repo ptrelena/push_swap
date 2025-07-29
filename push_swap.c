@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h" //header
+#include "push_swap.h"
 
 /// @brief divides & validates received args from terminal
 /// @param argc num of args recived
@@ -23,24 +23,20 @@ char	***ft_parse_arguments(int argc, char **argv, int *ttl_num, int *n_arr)
 	char	***array;
 	int		i;
 	int		a;
-	int		j;
 
 	i = 1;
 	a = 0;
 	array = malloc(sizeof(char **) * (argc - 1));
 	if (!array)
 		return (NULL);
-	*ttl_num = 0;
+	*ttl_num = 0; //starting digits in 0
 	while (argv[i] && ft_val_let(argv[i]))
 	{
-		array[a] = ft_split(argv[i], ' ');
-		j = 0;
-		while (array[a][j++])
-			(*ttl_num)++;
+		*ttl_num += ft_process_argument(argv[i], array, a); //process and count args
 		i++;
 		a++;
 	}
-	*n_arr = a;
+	*n_arr = a; //index a = number of args stored in char* array
 	return (array);
 }
 
@@ -63,27 +59,20 @@ void	ft_algorithm_sel(int *num, int total_nums)
 	ft_free_list (stack_b);
 }
 
-/// @brief push_swap sort nums
-/// @param argc num of args recived
-/// @param argv array of args received
-/// @return sorted list of nums received
-int	main(int argc, char **argv)
+/// @brief processes parsed arguments and executes sorting
+/// @param array parsed arguments
+/// @param total_nums total number count
+/// @param n_array array count
+/// @return exit code
+static int	ft_process_numbers(char ***array, int total_nums, int n_array)
 {
-	char	***array;
-	int		*num;
-	int		total_nums;
-	int		n_array;
+	int	*num;
 
-	total_nums = 0;
-	n_array = 0;
-	if (argc <= 1)
-		return (0);
-	array = ft_parse_arguments(argc, argv, &total_nums, &n_array);
-	if (!array)
-		return (0);
 	num = ft_convert_to_int_array(array, n_array, total_nums);
 	if (!num)
-		return (0);
+		return (ft_handle_error(array, NULL, n_array));
+	if (total_nums == 0)
+		return (ft_handle_error(array, num, n_array));
 	if (!ft_val_num(num, total_nums))
 		ft_out();
 	if (!ft_is_sorted(num, total_nums))
@@ -91,4 +80,24 @@ int	main(int argc, char **argv)
 	ft_free_array(array, n_array);
 	free(num);
 	return (0);
+}
+
+/// @brief push_swap sort nums
+/// @param argc num of args recived
+/// @param argv array of args received
+/// @return sorted list of nums received
+int	main(int argc, char **argv)
+{
+	char	***array;
+	int		total_nums;
+	int		n_array;
+
+	total_nums = 0;
+	n_array = 0;
+	if (argc <= 1)
+		return (1);
+	array = ft_parse_arguments(argc, argv, &total_nums, &n_array);
+	if (!array)
+		return (1);
+	return (ft_process_numbers(array, total_nums, n_array));
 }

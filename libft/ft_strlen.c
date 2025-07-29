@@ -36,4 +36,3 @@ int	main(void)
 	v_lenght = ft_strlen(str);
 	printf("Char lenght: %d", v_lenght);
 	return (0);
-}*/

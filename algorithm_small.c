@@ -94,7 +94,7 @@ void	ft_sort_small_5(t_listps **stack_a, t_listps **stack_b)
 			ft_ra (stack_a);
 	}
 	if ((*stack_b)->key < (*stack_b)->next->key)
-		ft_sb (stack_a);
+		ft_sb (stack_b);
 	ft_sort_small_3(stack_a);
 	ft_pa (stack_a, stack_b);
 	ft_pa (stack_a, stack_b);

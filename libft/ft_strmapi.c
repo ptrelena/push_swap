@@ -41,8 +41,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 /* char ft_to_upper_or_lower(unsigned int i, char c)
 {
 	if (i % 2 == 0)
-		return (toupper(c)); //uppercase if even
-	return (tolower(c));  //lowercase if odd
+		return (toupper(c));
+	return (tolower(c));
 }
 
 int	main(void)
@@ -50,4 +50,3 @@ int	main(void)
 	char	a [] = "I like programming a lot";
 	printf("%s\n", ft_strmapi(a, ft_to_upper_or_lower));
 	return (0);
-} */

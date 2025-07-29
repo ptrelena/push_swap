@@ -24,7 +24,6 @@ void	ft_putendl_fd(char *s, int fd)
 
 /* int	main(void)
 {
-	int	fd = open("try.txt", O_RDWR, O_APPEND); //fd declaration
+	int	fd = open("try.txt", O_RDWR, O_APPEND);
 	ft_putendl_fd("Elena y Fran <3", fd);
 	return (0);
-} */

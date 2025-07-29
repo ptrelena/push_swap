@@ -12,32 +12,6 @@
 
 #include "push_swap.h"
 
-/// @brief validates str contains only allowed chars (digits, spaces, signs)
-/// @param str arg to validate
-/// @return valid returns 1, exits calling ft_out otherwise
-int	ft_val_let(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == 32 || str[i] == 9
-				|| str[i] == '-' || str[i] == '+'))
-			ft_out();
-		if ((str[i] == '-' || str[i] == '+') && !(str[i + 1] >= '0'
-				&& str[i + 1] <= '9'))
-			ft_out();
-		if ((str[i] >= '0' && str[i] <= '9')
-			&& !((str[i + 1] >= '0' && str[i + 1] <= '9')
-				|| str[i + 1] == 32
-				|| str[i + 1] == 9 || str[i + 1] == '\0'))
-			ft_out();
-		i++;
-	}
-	return (1);
-}
-
 /// @brief checks for duplicate nums in array
 /// @param nums nums in array
 /// @param size total of nums in array
@@ -126,6 +100,12 @@ int	*ft_convert_to_int_array(char ***array, int n_array, int total_nums)
 		j = 0;
 		while (array[i] && array[i][j])
 		{
+
+			if (array[i][j][0] == '\0')
+			{
+				free(nums);
+				return (NULL);
+			}
 			nums[a] = ft_atol(array[i][j]);
 			a++;
 			j++;

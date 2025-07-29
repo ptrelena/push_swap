@@ -46,14 +46,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 /* int	main(void)
 {
-	char	a [] = "Elena Juana"; //dest
-	char	b [] = "Maria"; //src
-	size_t	c = 5; //number of bytes to copy
+	char	a [] = "Elena Juana";
+	char	b [] = "Maria";
+	size_t	c = 5;
 
-	printf("%s\n", a); //dest before memmove
-	printf("%s\n", b); //src before memmove
-	ft_memmove(a, b, c); //call ft
-	printf("%s\n", a); //dest after memmove
-	printf("%s\n", b); //src after memmove
-	return (0); //void ft
+	printf("%s\n", a);
+	printf("%s\n", b);
+	ft_memmove(a, b, c);
+	printf("%s\n", a);
+	printf("%s\n", b);
+	return (0);
 } */

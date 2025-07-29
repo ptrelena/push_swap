@@ -41,14 +41,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 /* int main(void)
 {
-	char    a [] = "Manolo"; //dst
-	char    b [] = "Aurelio"; //src
-	size_t  c = 3; //size
+	char    a [] = "Manolo";
+	char    b [] = "Aurelio";
+	size_t  c = 3;
 
-	printf("%s\n", a); //dst before strlcat
-	printf("%s\n", b); //src before strlcat
-	printf("%zu\n", ft_strlcat(a, b, c)); //call ft
-	printf("%s\n", a); //dst after strlcat
-	printf("%s\n", b); //src after strlcat
-	return (0); //void ft
+	printf("%s\n", a);
+	printf("%s\n", b);
+	printf("%zu\n", ft_strlcat(a, b, c));
+	printf("%s\n", a);
+	printf("%s\n", b);
+	return (0);
 } */

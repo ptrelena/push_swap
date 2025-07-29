@@ -41,16 +41,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 /* int	main(void)
 {
-	//equal little
-	char	a1 [] = "Street"; //big
-	char	a2 [] = "Str"; //little
-	//different little
-	char	b1 [] = "Street"; //big
-	char	b2 [] = "tree"; //little
-	//equal little lowercase
-	char	c1 [] = "Street"; //big
-	char	c2 [] = "str"; //little
-	size_t	t = 3; //len
+
+	char	a1 [] = "Street";
+	char	a2 [] = "Str";
+
+	char	b1 [] = "Street";
+	char	b2 [] = "tree";
+
+	char	c1 [] = "Street";
+	char	c2 [] = "str";
+	size_t	t = 3;
 
 	printf("%s\n", ft_strnstr(a1, a2, t));
 	printf("%s\n", ft_strnstr(b1, b2, t));

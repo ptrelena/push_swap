@@ -76,5 +76,8 @@ void			ft_sort_chunk(t_listps **stack_a, t_listps **stack_b, int size);
 void			ft_push_chunk_b(t_listps **stack_a, t_listps **stack_b,
 					int size);
 void			ft_push_back(t_listps **stack_a, t_listps **stack_b);
+int				ft_validate_split_array(char **array_elem);
+int				ft_process_argument(char *argv_elem, char ***array, int a);
+int				ft_handle_error(char ***array, int *num, int n_array);
 
 #endif

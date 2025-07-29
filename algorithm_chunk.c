@@ -104,8 +104,11 @@ void	ft_push_back(t_listps **stack_a, t_listps **stack_b)
 		}
 		else
 		{
-			while (++max_pos < size_b)
+			while (max_pos < size_b)
+			{
 				ft_rrb (stack_b);
+				max_pos++;
+			}
 		}
 		ft_pa (stack_a, stack_b);
 	}

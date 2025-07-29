@@ -35,22 +35,22 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 /* int main(void)
 {
-	size_t t = 4; //'n'
-	//char in str - returns found char
-	char    a1 [] = "Piscine"; //'*s'
-	int     a2 = 's'; //'c'
-	//char in first position - returns str beginning
-	char    b1 [] = "Piscine"; //'*s'
-	int     b2 = 'P'; //'c'
-	//char not in str - returns NULL
-	char    c1 [] = "Piscine"; //'*s'
-	int     c2 = 'z'; //'c'
-	//NULL - returns str ending
-	char    d1 [] = "Piscine"; //'*s'
-	int     d2 = '\0'; //'c'
-	//char appears several times - returns char first appearance
-	char    e1 [] = "Piscine"; //'*s'
-	int     e2 = 'i'; //'c'
+	size_t t = 4;
+
+	char    a1 [] = "Piscine";
+	int     a2 = 's';
+
+	char    b1 [] = "Piscine";
+	int     b2 = 'P';
+
+	char    c1 [] = "Piscine";
+	int     c2 = 'z';
+
+	char    d1 [] = "Piscine";
+	int     d2 = '\0';
+
+	char    e1 [] = "Piscine";
+	int     e2 = 'i';
 
 	printf("a: %p\n", a1);
 	printf("a: %p\n",ft_memchr(a1, a2, t));
@@ -63,4 +63,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	printf("e: %p\n", e1);
 	printf("e: %p\n",ft_memchr(e1, e2, t));
 	return (0);
-} */

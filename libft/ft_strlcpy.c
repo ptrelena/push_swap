@@ -35,14 +35,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 /* int main(void)
 {
-	char    a [] = "Manolo"; //dst
-	char    b [] = "Aurelio"; //src
-	size_t  c = 3; //'size'
+	char    a [] = "Manolo";
+	char    b [] = "Aurelio";
+	size_t  c = 3;
 
-	printf("%s\n", a); //dst before strlcpy
-	printf("%s\n", b); //src before strlcpy
-	printf("%zu\n", ft_strlcpy(a, b, c)); //call ft
-	printf("%s\n", a); //dst after strlcpy
-	printf("%s\n", b); //src after strlcpy
-	return(0); //void ft
-} */
+	printf("%s\n", a);
+	printf("%s\n", b);
+	printf("%zu\n", ft_strlcpy(a, b, c));
+	printf("%s\n", a);
+	printf("%s\n", b);
+	return(0);

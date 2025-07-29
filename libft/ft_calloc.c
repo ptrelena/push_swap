@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-// malloc - assigns mem during ft execution
+
 /// @brief mem for variable = count * size
 /// @param count - variable length
 /// @param size - variable size
@@ -30,9 +30,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 /* int	main(void)
 {
-	size_t	a = 5; //count
-	size_t	b = 3; //size
+	size_t	a = 5;
+	size_t	b = 3;
 
 	printf("%p\n", ft_calloc(a, b));
 	return (0);
-} */

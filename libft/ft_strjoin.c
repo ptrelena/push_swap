@@ -45,9 +45,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 /* int	main(void)
 {
-	char	a [] = "Elena"; //s1
-	char	b [] = "Perez"; //s2
+	char	a [] = "Elena";
+	char	b [] = "Perez";
 
 	printf("%s", ft_strjoin(a, b));
 	return(0);
-} */

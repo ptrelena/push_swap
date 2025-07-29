@@ -24,7 +24,6 @@ void	ft_putchar_fd(char c, int fd)
 /* int	main(void)
 {
 	ft_putchar_fd('E', 1);
-	int fd = open("try.txt", O_RDWR, O_APPEND); //fd declaration
+	int fd = open("try.txt", O_RDWR, O_APPEND);
 	ft_putchar_fd('E', fd);
 	return (0);
-} */

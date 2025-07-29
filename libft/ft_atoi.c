@@ -44,35 +44,34 @@ int	ft_atoi(const char *nptr)
 
 /* int main(void)
 {
-	char    a [] = "-1"; //ex1 - positive number
-	char    b [] = "1"; //ex2 - negative number
-	char    c [] = " 1"; //ex3 - space + positive number
-	char    d [] = " +1"; //ex4 - space + sign + number
-	char    e [] = " a1"; //ex5 - no numeric char
+	char    a [] = "-1";
+	char    b [] = "1";
+	char    c [] = " 1";
+	char    d [] = " +1";
+	char    e [] = " a1";
 
-	//analyze 'a'
-	printf("%s\n", a); //printf before atoi
+
+	printf("%s\n", a);
 	ft_atoi(a);
-	printf("%s\n", a); //printf after atoi
+	printf("%s\n", a);
 
-	//analyze 'b'
-	printf("%s\n", b); //printf before atoi
+
+	printf("%s\n", b);
 	ft_atoi(b);
-	printf("%s\n", b); //printf after atoi
+	printf("%s\n", b);
 
-	//analyze 'c'
-	printf("%s\n", c); //printf before atoi
+
+	printf("%s\n", c);
 	ft_atoi(c);
-	printf("%s\n", c); //printf after atoi
+	printf("%s\n", c);
 
-	//analyze 'd'
-	printf("%s\n", d); //printf before atoi
+
+	printf("%s\n", d);
 	ft_atoi(d);
-	printf("%s\n", d); //printf after atoi
+	printf("%s\n", d);
 
-	//analyze 'e'
-	printf("%s\n", e); //printf before atoi
+
+	printf("%s\n", e);
 	ft_atoi(e);
-	printf("%s\n", e); //printf after atoi
+	printf("%s\n", e);
 	return (0);
-} */

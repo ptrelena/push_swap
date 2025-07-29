@@ -24,7 +24,7 @@ void	ft_lstadd_back_ps(t_listps **lst, t_listps *new)
 		return ;
 	if (*lst == NULL)
 	{
-		*lst = new;
+		*lst = new; //equal first node to new node
 		return ;
 	}
 	while (last->next != NULL)
@@ -38,7 +38,7 @@ void	ft_lstadd_back_ps(t_listps **lst, t_listps *new)
 void	ft_lstadd_front_ps(t_listps **lst, t_listps *new)
 {
 	new->next = *lst;
-	*lst = new;
+	*lst = new; //list beginning now pointing to new node
 }
 
 /// @brief finds linked list's last node
