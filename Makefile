@@ -22,8 +22,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = algorithm_chunk.c algorithm_small.c op_push.c op_reverse_rotate.c \
-	op_rotate.c op_stack.c op_swap.c push_swap.c utils_general.c \
-	utils_index.c utils_lists.c utils_num_validation.c utils_split.c utils_parsing.c
+	op_rotate.c op_swap.c push_swap.c utils_convert.c utils_general.c \
+	utils_index.c utils_lists.c utils_parsing.c
 
 OBJ = $(SRC:.c=.o)
 

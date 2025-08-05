@@ -39,7 +39,7 @@ char	*ft_strdup(const char *s1)
 
 /* int	main(void)
 {
-	char	a [] = "Elenita";
+	char	a [] = "Elenita"; //s1
 
 	printf("%s", ft_strdup(a));
 	return (0);

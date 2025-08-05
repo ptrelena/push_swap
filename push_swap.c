@@ -15,8 +15,8 @@
 /// @brief divides & validates received args from terminal
 /// @param argc num of args recived
 /// @param argv array of args received
-/// @param total_nums total num of digits stored in array - array[a][j]
-/// @param n_array total num of splitted args - array[a]
+/// @param ttl_num total num of digits stored in array - array[a][j]
+/// @param n_arr total num of splitted args - array[a]
 /// @return triple char * w divided num
 char	***ft_parse_arguments(int argc, char **argv, int *ttl_num, int *n_arr)
 {
@@ -29,15 +29,38 @@ char	***ft_parse_arguments(int argc, char **argv, int *ttl_num, int *n_arr)
 	array = malloc(sizeof(char **) * (argc - 1));
 	if (!array)
 		return (NULL);
-	*ttl_num = 0; //starting digits in 0
-	while (argv[i] && ft_val_let(argv[i]))
+	*ttl_num = 0;
+	while (argv[i] && ft_str_val(argv[i]))
 	{
-		*ttl_num += ft_process_argument(argv[i], array, a); //process and count args
+		*ttl_num += ft_split_argument(argv[i], array, a);
 		i++;
 		a++;
 	}
-	*n_arr = a; //index a = number of args stored in char* array
+	*n_arr = a;
 	return (array);
+}
+
+/// @brief processes parsed arguments and executes sorting
+/// @param array parsed arguments
+/// @param total_nums total number count
+/// @param n_array array count
+/// @return exit code
+static int	ft_process_numbers(char ***array, int total_nums, int n_array)
+{
+	int	*num;
+
+	num = ft_convert_to_int_array(array, n_array, total_nums);
+	if (!num)
+		return (ft_handle_error(array, NULL, n_array));
+	if (total_nums == 0)
+		return (ft_handle_error(array, num, n_array));
+	if (!ft_find_duplicates(num, total_nums))
+		ft_out();
+	if (!ft_is_sorted(num, total_nums))
+		ft_algorithm_sel(num, total_nums);
+	ft_free_array(array, n_array);
+	free(num);
+	return (0);
 }
 
 /// @brief apply algorythm according to nums received
@@ -57,29 +80,6 @@ void	ft_algorithm_sel(int *num, int total_nums)
 		ft_sort_chunk (&stack_a, &stack_b, total_nums);
 	ft_free_list (stack_a);
 	ft_free_list (stack_b);
-}
-
-/// @brief processes parsed arguments and executes sorting
-/// @param array parsed arguments
-/// @param total_nums total number count
-/// @param n_array array count
-/// @return exit code
-static int	ft_process_numbers(char ***array, int total_nums, int n_array)
-{
-	int	*num;
-
-	num = ft_convert_to_int_array(array, n_array, total_nums);
-	if (!num)
-		return (ft_handle_error(array, NULL, n_array));
-	if (total_nums == 0)
-		return (ft_handle_error(array, num, n_array));
-	if (!ft_val_num(num, total_nums))
-		ft_out();
-	if (!ft_is_sorted(num, total_nums))
-		ft_algorithm_sel(num, total_nums);
-	ft_free_array(array, n_array);
-	free(num);
-	return (0);
 }
 
 /// @brief push_swap sort nums

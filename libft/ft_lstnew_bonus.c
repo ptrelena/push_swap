@@ -38,3 +38,4 @@ t_list	*ft_lstnew(void *content)
 		printf("node created: %s\n", (char *)node->content);
 
 	return (0);
+} */

@@ -26,6 +26,7 @@ void	ft_putstr_fd(char *s, int fd)
 
 /* int	main(void)
 {
-	int fd = open("try.txt", O_RDWR, O_APPEND);
+	int fd = open("try.txt", O_RDWR, O_APPEND); //fd declaration
 	ft_putstr_fd("Elena", fd);
 	return(0);
+} */

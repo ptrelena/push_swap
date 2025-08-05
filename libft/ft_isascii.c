@@ -29,7 +29,7 @@ int	main(void)
 	int b = 'A';
 	int c = '1';
 	int d = '@';
-	unsigned char   e = 164;
+	unsigned char   e = 164; //num ascii for 'ñ'
 
 	printf("%d", ft_isascii(a));
 	printf("%d", ft_isascii(b));
@@ -37,3 +37,4 @@ int	main(void)
 	printf("%d", ft_isascii(d));
 	printf("%d", ft_isascii(e));
 	return (0);
+}*/

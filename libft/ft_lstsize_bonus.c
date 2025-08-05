@@ -35,16 +35,17 @@ int	ft_lstsize(t_list *lst)
 	t_list *node3 = ft_lstnew("third node");
 	int	total_nodes;
 
-
+	//link nodes
 	node1->next = node2;
 	node2->next = node3;
 
-
+	//call ft
 	total_nodes = ft_lstsize(node1);
 	printf("lst has %d nodes\n", total_nodes);
 
-
+	//free node space
 	free(node1);
 	free(node2);
 	free(node3);
 	return (0);
+} */

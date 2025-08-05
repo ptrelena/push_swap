@@ -19,7 +19,6 @@ void	ft_reverse_rotate(t_listps **stack)
 	t_listps	*last;
 	t_listps	*second_to_last;
 
-
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
 	second_to_last = *stack;
@@ -28,7 +27,7 @@ void	ft_reverse_rotate(t_listps **stack)
 	last = second_to_last->next;
 	second_to_last->next = NULL;
 	last->next = *stack;
-	*stack = last; //last becomes first
+	*stack = last;
 }
 
 /// @brief moves stack_a's last element to top

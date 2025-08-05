@@ -37,18 +37,19 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 /*
 int	main(void)
 {
-
-	char   a1 [] = "ElenaElenita";
-	char    a2 [] = "ElenaElenita";
-
-	char    b1 [] = "ElenaElenita";
-	char    b2 [] = "CarlosCarlitos";
-
-	char    c1 [] = "ElenaElenita";
-	char    c2 [] = "Elenita'\0'Carlos";
-	size_t  z = 10;
+	//same str - return 0
+	char   a1 [] = "ElenaElenita"; //s1
+	char    a2 [] = "ElenaElenita"; //s2
+	//different str
+	char    b1 [] = "ElenaElenita"; //s1
+	char    b2 [] = "CarlosCarlitos"; //s2
+	//str including NULL
+	char    c1 [] = "ElenaElenita"; //s1
+	char    c2 [] = "Elenita'\0'Carlos"; //s2
+	size_t  z = 10; //n
 
 	printf("a: %d\n", ft_memcmp(a1, a2, z));
 	printf("b: %d\n", ft_memcmp(b1, b2, z));
 	printf("c: %d\n", ft_memcmp(c1, c2, z));
 	return (0);
+} */

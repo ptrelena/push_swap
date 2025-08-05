@@ -40,6 +40,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 /* int	main(void)
 {
-	int	fd = open("try.txt", O_RDWR, O_APPEND);
+	int	fd = open("try.txt", O_RDWR, O_APPEND); //fd declaration
 	ft_putnbr_fd(42, fd);
 	return (0);
+} */

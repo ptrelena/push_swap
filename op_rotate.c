@@ -6,18 +6,7 @@
 /*   By: elenpere <elenpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 09:50:10 by elenpere          #+#    #+#             */
-/*   Updated: 2025/07/22 16:36:05 by elenpere         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   op_rotate.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: elena.c.perez <elena.c.perez@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 13:33:10 by elenpere          #+#    #+#             */
-/*   Updated: 2025/07/15 13:37:57 by elena.c.per      ###   ########.fr       */
+/*   Updated: 2025/08/04 19:48:09 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +19,10 @@ void	ft_rotate(t_listps **stack)
 	t_listps	*final;
 	t_listps	*first;
 
-
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
 	first = *stack;
-	*stack = first->next; //second becomes first
+	*stack = first->next;
 	first->next = NULL;
 	final = ft_lstlast_ps (*stack);
 	final->next = first;

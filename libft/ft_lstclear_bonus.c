@@ -47,3 +47,4 @@ int	main(void)
 	node3->next = NULL;
 	ft_lstclear(&node1, del);
 	return (0);
+} */

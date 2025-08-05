@@ -45,9 +45,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 /* int	main(void)
 {
-	char	a [] = "university";
-	int	b = 3;
-	size_t	c = 5;
+	char	a [] = "university"; //s
+	int	b = 3; //start
+	size_t	c = 5; //len
 
 	printf("%s", ft_substr(a, b, c));
 	return(0);
+} */

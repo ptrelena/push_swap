@@ -35,31 +35,31 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 /* int main(void)
 {
-
-	char    a1 [] = "Elena";
-	char    a2 [] = "Elena";
-
-	char    b1 [] = "Elena";
-	char    b2 [] = "Eleno";
-
-	char    c1 [] = "Elena";
-	char    c2 [] = "Ele";
-
-	char    d1 [] = "Elena";
-	char    d2 [] = "ElenoElena123";
-
-	char    e1 [] = "Elena";
-	char    e2 [] = "Javier";
-
-	char    f1 [] = "ELENA";
-	char    f2 [] = "elena";
-
-	char    g1 [] = "123";
-	char    g2 [] = "124";
-
-	char    h1 [] = "Elena";
-	char    h2 [] = "";
-	size_t  m = 10;
+	//same str
+	char    a1 [] = "Elena"; //s1
+	char    a2 [] = "Elena"; //s2
+	//different str
+	char    b1 [] = "Elena"; //s1
+	char    b2 [] = "Eleno"; //s2
+	//shorter str
+	char    c1 [] = "Elena"; //s1
+	char    c2 [] = "Ele"; //s2
+	//str longer than n
+	char    d1 [] = "Elena"; //s1
+	char    d2 [] = "ElenoElena123"; //s2
+	//different str
+	char    e1 [] = "Elena"; //s1
+	char    e2 [] = "Javier"; //s2
+	//lowercase, uppercase
+	char    f1 [] = "ELENA"; //s1
+	char    f2 [] = "elena"; //s2
+	//numbers
+	char    g1 [] = "123"; //s1
+	char    g2 [] = "124"; //s2
+	//empty str
+	char    h1 [] = "Elena"; //s1
+	char    h2 [] = ""; //s2
+	size_t  m = 10; //n
 
 	printf("a: %i\n", ft_strncmp(a1, a2, m));
 	printf("b: %i\n", ft_strncmp(b1, b2, m));
@@ -70,3 +70,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	printf("g: %i\n", ft_strncmp(g1, g2, m));
 	printf("h: %i\n", ft_strncmp(h1, h2, m));
 	return (0);
+} */

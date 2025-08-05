@@ -1,53 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_num_validation.c                             :+:      :+:    :+:   */
+/*   utils_convert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elenpere <elenpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 09:50:38 by elenpere          #+#    #+#             */
-/*   Updated: 2025/07/22 17:08:16 by elenpere         ###   ########.fr       */
+/*   Updated: 2025/08/04 19:52:10 by elenpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/// @brief checks for duplicate nums in array
-/// @param nums nums in array
-/// @param size total of nums in array
-/// @return 1 if unique values, 0 if duplicate
-int	ft_val_num(int *nums, int size)
-{
-	int	i;
-	int	a;
-
-	i = 0;
-	while (i < size)
-	{
-		a = 0;
-		while (a < i)
-		{
-			if (nums[a] == nums[i])
-				return (0);
-			a++;
-		}
-		i++;
-	}
-	return (1);
-}
-
-/// @brief checks if nun if within INT_MIN & INT_MAX
-/// @param num long int to validate
-/// @return 1 if valid, exits program otherwise
-int	ft_limit(long num)
-{
-	long	temp;
-
-	temp = num;
-	if (temp < INT_MIN || temp > INT_MAX)
-		ft_out();
-	return (1);
-}
 
 /// @brief converts str to long
 /// @param nptr str to convert
@@ -100,15 +63,12 @@ int	*ft_convert_to_int_array(char ***array, int n_array, int total_nums)
 		j = 0;
 		while (array[i] && array[i][j])
 		{
-
 			if (array[i][j][0] == '\0')
 			{
 				free(nums);
 				return (NULL);
 			}
-			nums[a] = ft_atol(array[i][j]);
-			a++;
-			j++;
+			nums[a++] = ft_atol(array[i][j++]);
 		}
 		i++;
 	}

@@ -16,7 +16,7 @@
 /// @param array int array to be sorted
 /// @param total_nums total num of ints in array
 /// @return sorted array
-int	*ft_array_index(int *array, int total_nums)
+int	*ft_bubble_sort(int *array, int total_nums)
 {
 	int	temp;
 	int	i;
@@ -88,7 +88,7 @@ void	ft_assign_index(t_listps *stack, int total_nums)
 		i++;
 	}
 	i = 0;
-	array = ft_array_index(array, total_nums);
+	array = ft_bubble_sort(array, total_nums);
 	ft_assign_keys(stack, array, total_nums);
 	free(array);
 }

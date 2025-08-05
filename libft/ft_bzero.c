@@ -32,11 +32,12 @@ void	ft_bzero(void *s, size_t n)
 
 /* int	main(void)
 {
-	char	str [] = "Elena";
-	size_t	n = 5;
-	printf("%s\n", str);
-	ft_bzero(str, n);
-	printf("%s\n", str);
+	char	str [] = "Elena"; //create a pointer variable
+	size_t	n = 5; //create n variable
+	printf("%s\n", str); //print str before bzero
+	ft_bzero(str, n); //call ft
+	printf("%s\n", str); //print str after bzero
 	return (0);
 }
 
+bzero = memset, setting c = 0 */

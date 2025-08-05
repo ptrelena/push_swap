@@ -24,7 +24,7 @@ void	ft_lstadd_back_ps(t_listps **lst, t_listps *new)
 		return ;
 	if (*lst == NULL)
 	{
-		*lst = new; //equal first node to new node
+		*lst = new;
 		return ;
 	}
 	while (last->next != NULL)
@@ -38,7 +38,7 @@ void	ft_lstadd_back_ps(t_listps **lst, t_listps *new)
 void	ft_lstadd_front_ps(t_listps **lst, t_listps *new)
 {
 	new->next = *lst;
-	*lst = new; //list beginning now pointing to new node
+	*lst = new;
 }
 
 /// @brief finds linked list's last node
@@ -51,22 +51,6 @@ t_listps	*ft_lstlast_ps(t_listps *lst)
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);
-}
-
-/// @brief creates new node alone for a future linked list
-/// @param content value to store in new node
-/// @return * to new node / NULL if mem allocation fails
-t_listps	*ft_lstnew_ps(int content)
-{
-	t_listps	*new;
-
-	new = (t_listps *)malloc(sizeof (t_listps));
-	if (new == NULL)
-		return (NULL);
-	new->content = content;
-	new->key = 0;
-	new->next = NULL;
-	return (new);
 }
 
 /// @brief calculates list size (num of nodes)
@@ -83,4 +67,32 @@ int	ft_list_size_ps(t_listps *stack)
 		size++;
 	}
 	return (size);
+}
+
+/// @brief creates linked list (stack) from int array
+/// @param nums * array to be added to list
+/// @param total_nums total num of ints
+/// @return * to head of list / NULL if mem allocation fails
+t_listps	*ft_create_lists(int *nums, int total_nums)
+{
+	t_listps	*stack;
+	t_listps	*node;
+	int			i;
+
+	i = 0;
+	stack = NULL;
+	while (i < total_nums)
+	{
+		node = malloc(sizeof(t_listps));
+		if (!node)
+		{
+			ft_free_list(stack);
+			return (NULL);
+		}
+		node->content = nums[i];
+		node->next = NULL;
+		ft_lstadd_back_ps(&stack, node);
+		i++;
+	}
+	return (stack);
 }

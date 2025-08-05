@@ -33,3 +33,4 @@ int	main(void)
 	printf ("%c", ft_toupper(a));
 	printf ("%c", ft_toupper(b));
 	return (0);
+}*/

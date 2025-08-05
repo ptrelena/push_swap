@@ -19,7 +19,6 @@ void	ft_swap(t_listps **stack)
 	int	temp_content;
 	int	temp_key;
 
-
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
 	temp_content = (*stack)->content;

@@ -29,7 +29,7 @@ int	main(void)
 	int b = 'A';
 	int c = '1';
 	int d = '=';
-	int e = 128;
+	int e = 128; //ascii num for 'Ç' (not printable)
 
 	printf("%d", ft_isprint(a));
 	printf("%d", ft_isprint(b));
@@ -37,3 +37,4 @@ int	main(void)
 	printf("%d", ft_isprint(d));
 	printf("%d", ft_isprint(e));
 	return (0);
+}*/
